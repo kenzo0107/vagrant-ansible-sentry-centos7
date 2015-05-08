@@ -1,0 +1,14 @@
+- name: get redis-repo
+  shell: wget -r --no-parent -A 'epel-release-*.rpm' http://dl.fedoraproject.org/pub/epel/7/x86_64/e/
+
+- name: set redis-repo
+  shell: rpm -Uvh dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-*.rpm
+
+- name: install redis
+  yum: name=redis state=latest
+
+- name: systemctl start redis
+  shell: systemctl start redis.service
+
+- name: systemctl enable redis
+  shell: systemctl enable redis

@@ -1,0 +1,3 @@
+# Create a new database with name 'sentry'
+- mysql_db: name=sentry encoding=utf8  state=present
+- mysql_user: name=sentry password=sentry priv=sentry.*:ALL,GRANT state=present

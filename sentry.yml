@@ -1,0 +1,18 @@
+- hosts: all
+  port: 2222
+  user: vagrant
+  sudo: yes
+  gather_facts: yes
+  roles:
+#    - packages
+#    - redis
+#    - mysql
+#    - nginx
+#    - sentry-mysql # create DB sentry, User sentry.
+#    - sentry-nginx # setting default.conf for sentry.
+    - sentry
+  handlers:
+    - name: restart nginx
+      shell: systemctl restart nginx.service
+    - name: restart supervisord
+      shell: systemctl restart supervisord.service

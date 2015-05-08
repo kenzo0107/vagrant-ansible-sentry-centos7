@@ -1,0 +1,16 @@
+sentry_yum_pacakage:
+  - gcc
+  - gcc-c++ 
+  - kernel-devel
+  - python-devel
+  - libxslt-devel
+  - libffi-devel
+  - openssl-devel
+  - wget
+  - supervisor
+
+sentry_pip_pacakage:
+  - cryptography
+  - mysql-python
+  - virtualenv
+  - celery
