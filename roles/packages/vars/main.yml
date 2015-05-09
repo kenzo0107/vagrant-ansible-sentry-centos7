@@ -8,6 +8,7 @@ sentry_yum_pacakage:
   - libffi-devel
   - openssl-devel
   - wget
+  - epel-release
 
 sentry_pip_pacakage:
   - cryptography
