@@ -1,4 +1,4 @@
-sentry_yum_pacakage:
+yum_pacakage:
   - gcc
   - gcc-c++ 
   - kernel-devel
@@ -9,10 +9,10 @@ sentry_yum_pacakage:
   - openssl-devel
   - wget
   - epel-release
+  - supervisor
 
-sentry_pip_pacakage:
+pip_pacakage:
   - cryptography
   - mysql-python
   - virtualenv
   - celery
-  - supervisor

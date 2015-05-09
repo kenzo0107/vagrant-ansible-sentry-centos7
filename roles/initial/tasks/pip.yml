@@ -1,12 +1,9 @@
+---
+
 - name: install pip
   shell: curl -kL https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python
-
-- name: install yum packages
-  yum: name={{ item }} state=latest
-  with_items:
-  - "{{ sentry_yum_pacakage }}"
 
 - name: install pip packages
   pip: name={{ item }} state=latest
   with_items:
-  - "{{ sentry_pip_pacakage }}"
+  - "{{ pip_pacakage }}"
