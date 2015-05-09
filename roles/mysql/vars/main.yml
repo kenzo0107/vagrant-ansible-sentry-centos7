@@ -5,3 +5,4 @@ packages:
   - mysql-community-server
   - mysql-community-devel
 
+mysql_root_password: root

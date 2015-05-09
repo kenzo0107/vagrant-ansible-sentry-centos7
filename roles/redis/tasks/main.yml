@@ -1,8 +1,15 @@
-- name: get redis-repo
-  shell: wget -r --no-parent -A 'epel-release-*.rpm' http://dl.fedoraproject.org/pub/epel/7/x86_64/e/
-
+- name: check redis-repo is imported
+  shell: |
+    rpm -qi epel-release-7-5.noarch | grep -q '^Summary     : Extra Packages for Enterprise Linux repository configuration'$; echo $?
+  register: result
+  ignore_errors: True
 - name: set redis-repo
-  shell: rpm -Uvh dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-*.rpm
+  shell: rpm -Uvh dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch
+  when: result.stdout != '0'
+
+#- name: get redis-repo
+#  shell: wget -r --no-parent -A 'epel-release-*.rpm' http://dl.fedoraproject.org/pub/epel/7/x86_64/e/
+#  when: result|failed
 
 - name: install redis
   yum: name=redis state=latest
