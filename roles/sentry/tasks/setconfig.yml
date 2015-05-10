@@ -11,4 +11,6 @@
 
 - name: set /etc/supervisord.d/sentry.ini
   template: src=sentry.ini dest=/etc/supervisord.d/sentry.ini
-  notify: restart supervisord
+  notify: 
+    - restart supervisord
+    - enable supervisord

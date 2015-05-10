@@ -2,3 +2,7 @@
 
 - name: restart supervisord
   shell: systemctl restart supervisord.service
+
+- name: enable supervisord
+  shell: systemctl enable supervisord.service
+
