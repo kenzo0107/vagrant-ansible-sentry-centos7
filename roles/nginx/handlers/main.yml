@@ -1,0 +1,10 @@
+---
+
+- name: start nginx
+  shell: systemctl start nginx.service
+
+- name: enable nginx
+  shell: systemctl enable nginx
+
+- name: restart nginx
+  shell: systemctl restart nginx.service

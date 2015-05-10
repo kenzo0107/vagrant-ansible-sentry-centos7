@@ -1,0 +1,10 @@
+---
+
+- name: start mysql
+  shell: systemctl start mysqld
+
+- name: enable mysql
+  shell: systemctl enable mysqld
+
+- name: restart mysql
+  shell: systemctl restart mysqld

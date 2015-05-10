@@ -1,0 +1,7 @@
+---
+
+- name: allow http
+  shell: firewall-cmd --add-service=http --zone=public --permanent
+
+- name: systemctl restart firewalld
+  shell: systemctl restart firewalld

@@ -1,0 +1,10 @@
+---
+
+repository:
+  - http://dev.mysql.com/get/mysql-community-release-el6-5.noarch.rpm
+
+packages:
+  - mysql-community-server
+  - mysql-community-devel
+
+mysql_root_password: root
