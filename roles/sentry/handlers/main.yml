@@ -1,0 +1,4 @@
+---
+
+- name: restart supervisord
+  shell: systemctl restart supervisord.service

@@ -1,0 +1,11 @@
+---
+
+- name: pip install sentry
+  pip: name={{ item }} state=latest
+  with_items:
+    - "{{ sentry_pip_package }}"
+
+- name: yum install supervisor for sentry.
+  yum: name={{ item }} state=latest
+  with_items:
+    - "{{ yum_package }}"

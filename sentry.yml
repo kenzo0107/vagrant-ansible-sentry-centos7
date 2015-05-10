@@ -9,6 +9,3 @@
     - mysql
     - nginx
     - sentry
-  handlers:
-    - name: restart supervisord
-      shell: systemctl restart supervisord.service

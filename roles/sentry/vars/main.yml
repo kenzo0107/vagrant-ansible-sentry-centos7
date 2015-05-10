@@ -1,2 +1,5 @@
-sentry_pip_pacakage:
+sentry_pip_package:
   - sentry[mysql]
+
+yum_package:
+  - supervisor

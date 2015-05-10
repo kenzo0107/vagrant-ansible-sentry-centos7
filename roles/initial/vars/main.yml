@@ -9,7 +9,6 @@ yum_pacakage:
   - openssl-devel
   - wget
   - epel-release
-  - supervisor
 
 pip_pacakage:
   - cryptography

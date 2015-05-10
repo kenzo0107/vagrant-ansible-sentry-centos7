@@ -1,0 +1,14 @@
+---
+
+- name: set /etc/sentry.conf.py
+  template: src=sentry.conf.py dest=/etc/sentry.conf.py
+
+- name: replace /etc/supervisord.conf
+  replace: dest=/etc/supervisord.conf regexp='^files = supervisord.d' replace='files = /etc/supervisord.d' backup=yes
+
+- name: useradd -s /sbin/nologin -M sentry
+  user: name=sentry shell="/sbin/nologin" state=present
+
+- name: set /etc/supervisord.d/sentry.ini
+  template: src=sentry.ini dest=/etc/supervisord.d/sentry.ini
+  notify: restart supervisord

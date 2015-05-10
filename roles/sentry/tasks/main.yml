@@ -1,9 +1,4 @@
-- name: pip install sentry
-  pip: name={{ item }} state=latest
-  with_items:
-  - "{{ sentry_pip_pacakage }}"
+---
 
-- template: src=sentry.conf.py dest=/etc/sentry.conf.py
-
-- template: src=sentry.conf dest=/etc/supervisord.d/sentry.conf
-  notify: restart supervisord
+- include: install.yml
+- include: setconfig.yml
